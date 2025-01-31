@@ -10,7 +10,7 @@ author: Luke
 
 Before getting into the project, it is important to understand what I was automating. A sailing start sequence consists of a 3- or 5-minute countdown. This countdown will have a total of four signals, depending on the start sequence the timing of the signals will differ. For a 5-minute sequence, there will be signals at 5-4-1-GO. For a 3-minute sequence there will be signals at 3-2-1-GO. There are also sequences called rolling starts where the end of one start sequence is the start of another. The automation of this included all different variations of the sequence so its applicable in all situations.
 
-![Desktop View](/assets/lib/img/AutomaticStartSequence/StartSequenceExample.gif){: width="500" height="250" }
+![Desktop View](/assets/img/AutomaticStartSequence/StartSequenceExample.gif){: width="500" height="250" }
 
 # Introduction
 
