@@ -28,9 +28,11 @@ This section outlines the design requirements for the breakout board, focusing o
 4. **External Bridge Pins for Voltage Dividers**
     - External bridge pins should be included to allow switching between different voltage divider configurations for the HT1621 controller.
     - This feature ensures adaptability for various voltage requirements and enhances usability.
+
 ## Designing PCD
 The design sheet is shown below for the PCB followed by explanations for all design choices and components, and then an image of the rounded PCB. 
 ![Desktop View](/assets/img/ht1621TestingBoard/Schematic_HT1621.png){: width="500" height="250" }
+
 ### HT1621
 
 Reading over the data sheet, the HT1621 requires pull-up resistors on its four communication lines. According to the data sheet, 47.5k resistors are suitable for both 3.3V and 5V operation. Additionally, 100n capacitors should be placed on the voltage pins for stability. A voltage divider between VDD and VLCD is needed to reduce voltage if VDD is higher than VLCD. The data sheet recommends a 15k resistor for stepping down 5V to 3.3V. This voltage divider will be bypassed through external pins in case the logic voltage matches the drive voltage. The SEG and COMM pins must also be connected to the LCD for proper operation.
