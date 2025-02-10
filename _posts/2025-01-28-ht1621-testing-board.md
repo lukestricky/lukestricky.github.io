@@ -1,14 +1,11 @@
 ---
-title: HT1621 Testing Board"
+title: "HT1621 Testing Board"
 date: 2024-02-16
-categories:
-  - PCB
-tags:
-  - PCB
-  - Embedded
-  - System
+categories: [PCB]
+tags: [PCB, Embedded, System]
 author: Luke
 ---
+
 ## Motivation
 For one of the projects, I'm building currently is a compass for my sailboat that tracks and displays various metrics. Since it needs to be easily readable in sunlight, I decided to use a reflexive LCD display. I chose the LCD-S401C71TR, a 4-digit LCD that fits my needs. To drive this display, I needed a HT1621, a small SMD driver chip. Instead of just using an existing board with an lcd on it already, I wanted to design a breakout board for the HT1621. This way, I can learn by doing and understand how it works so I can implement it on the PCB for my compass project.
 ## Design Requirement
