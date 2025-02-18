@@ -22,7 +22,7 @@ To improve upon Version 1 and ensure a successful second iteration, I planned th
 - Only use components I have access to for testing so I can first prototype the circuit on a breadboard. 
 - Use an IC for controlling the 7-segment display instead of connecting each segment directly to the STM32, reducing the number of required GPIO pins.
 
-To fully understand what I was trying to achieve, Version 1 of the project can be found here: [PUT LINK HERE].  
+To fully understand what I was trying to achieve, Version 1 of the project can be found [here](https://lukestricky.github.io/posts/automatic-start-sequence-V1/).  
 
 ---
 

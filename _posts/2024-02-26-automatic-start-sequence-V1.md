@@ -1,5 +1,5 @@
 ---
-title: "Automatic Start Sequence"
+title: "Automatic Start Sequence V1"
 date: 2024-02-10
 categories: [Embedded System]
 tags: [STM32, c++, Embedded System]
