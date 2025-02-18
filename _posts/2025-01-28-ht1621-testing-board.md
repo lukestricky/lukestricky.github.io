@@ -1,6 +1,6 @@
 ---
 title: "HT1621 Testing Board"
-date: 2024-02-16
+date: 2025-01-15
 categories: [PCB]
 tags: [PCB, Embedded, System]
 author: Luke

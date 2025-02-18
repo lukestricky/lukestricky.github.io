@@ -1,6 +1,6 @@
 ---
 title: "Automatic Start Sequence"
-date: 2024-02-16
+date: 2024-02-10
 categories: [Embedded System]
 tags: [STM32, c++, Embedded System]
 author: Luke

@@ -1,6 +1,6 @@
 ---
 title: "Automatic Start Sequence V2"
-date: 2025-02-16
+date: 2025-02-18
 categories: [Embedded System]
 tags: [STM32, c++, Embedded System, PCB]
 author: Luke
