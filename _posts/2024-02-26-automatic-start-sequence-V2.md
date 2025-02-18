@@ -6,8 +6,6 @@ tags: [STM32, c++, Embedded System, PCB]
 author: Luke
 ---
 
-# Automated Sailing Race Timer – Project Report
-
 ## Introduction  
 Last year, I embarked on designing a PCB based sailing start sequence automation tool, but the final outcome did not meet my expectations. The PCB I designed utilized an STM32 microcontroller in a package that had a ground plane underneath the chip, making it extremely difficult to solder without bridging adjacent pins to ground. Since I did not get the board assembled professionally, I had to solder it by hand, and this package proved to be a major challenge.  
 
