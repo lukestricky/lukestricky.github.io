@@ -41,8 +41,11 @@ Reading over the data sheet, the HT1621 requires pull-up resistors on its four c
 ### Level Shifter
 
 The level shifter requires connections for both 3.3V and 5V, which are the two logic levels it will be shifting. It also requires pull-up resistors; however, the pull-up resistors for the 5V line were disregarded since the HT1621 already has them in place. For the 3.3V lines an equation was used from the data sheet to limit the current into the level shifter:
-
-$$Rpu = (Vpu – 0.35 V) / 0.015 A$$
+$$
+\begin{equation}
+  Rpu = (Vpu – 0.35 V) / 0.015 A
+\end{equation}
+$$
 
 This gave ~200 Ω for the pull up resistors needed on the 3.3V side of the level shifter. 
 
