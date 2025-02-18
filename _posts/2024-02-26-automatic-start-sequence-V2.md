@@ -137,3 +137,5 @@ Given the marine environment where the device will be used, waterproofing was a 
 - Silicone sealant was applied around the holes to prevent water ingress.
 
 These design choices ensure that the enclosure is durable, functional, and resistant to water exposure, making it well-suited for use in outdoor and the conditions that a coach boat will bring.
+
+![Desktop View](/assets/img/AutomaticStartSequenceV2/case.gif){: width="500" height="250" }
