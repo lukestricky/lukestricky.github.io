@@ -8,17 +8,22 @@ author: Luke
 
 ## Quick Background on Start Sequences
 
-Before getting into the project, it is important to understand what I was automating. A sailing start sequence consists of a 3- or 5-minute countdown. This countdown will have a total of four signals, depending on the start sequence the timing of the signals will differ. For a 5-minute sequence, there will be signals at 5-4-1-GO. For a 3-minute sequence there will be signals at 3-2-1-GO. There are also sequences called rolling starts where the end of one start sequence is the start of another. The automation of this included all different variations of the sequence so its applicable in all situations.
-
+Before getting into the project, it is important to understand what I was automating. A sailing start sequence consists of a 3 or 5-minute countdown. This countdown will have a total of four signals, depending on the start sequence the timing of the signals will differ. For a 5-minute sequence, there will be signals at 5-4-1-GO. For a 3-minute sequence there will be signals at 3-2-1-GO. There are also sequences called rolling starts where the end of one start sequence is the start of another. The automation of this included all different variations of the sequence so its applicable in all situations.
 ![Desktop View](/assets/img/AutomaticStartSequence/StartSequenceExample.gif){: width="500" height="250" }
 
 ## Introduction
 
-I work as a sailing race coach in the summer, and I had difficulty running a start sequence while driving a coach boat and giving feedback. During a sequence I constantly needed to be looking at my watch to keep track of the time and be ready to give a signal, this got increasingly difficult when trying to give meaningful feedback. If the start sequence could be automated it would make my life as coach much easier, create a more reliable and repeatable sequence, and overall improve the quality of training. For the project I used a STM32 MCU to control a load switch connected to a horn. The I/O utilized 3 7-segment displays to show time and modes, along with three buttons. It was powered by 3 recycled 18650s in series to produce 12 volts.
+I work as a sailing race coach in the summer, and I had difficulty running a start sequence while driving a coach boat and giving feedback to sailors. During a sequence I constantly needed to be looking at my watch to keep track of the time and be ready to give a signal, this got increasingly difficult when trying to give meaningful feedback. If the start sequence could be automated it would make my life as coach much easier, create a more reliable and repeatable sequence, and overall improve the quality of training. For the project I used a STM32 MCU to control a relay connected to a horn. The I/O utilized 3 7-segment displays to show time and modes, along with three buttons. It was powered by 3 recycled 18650s in series to produce 12 volts.
 
-I created a prototype of this idea last summer using Arduino to test it and see if it was as useful as I thought it would be. After using it for a day I was sold, however, the prototype I made had some unreliable connections that were made apparent by the rough conditions on a coach boat. To solve this problem for the next iteration, I decided to create this project as a PCB and learn some bare metal while I’m at it.
+I created a prototype of this idea last summer using Arduino to test it and see if it was as useful as I thought it would be. After using it for a day I was sold, however, the prototype I made had some unreliable connections that were made apparent by the rough conditions on a coach boat. To solve this problem for the next iteration, I decided to create this project with usability in mind and learn some bare metal while I’m at it.
 
-## 7-Segment Displays
+## The Plan
+- Use a seven segment display to view the time and different modes
+- Use two buttons to control the mode and the operation of the timer
+- Used a load switch to switch the horn on and off
+- Control all of this with an stm32
+- Consolidate everything onto a single PCB and hand solder all components on
+## Seven Segment Display
 
 ### How they work
 
@@ -109,7 +114,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 ```
 
 ## Counting down
-It was import that the timer portion of this project was accurate to a T as it would confuse the sailors if it wasn't. I accomplished this by using another interrupt triggered by a timer. I wanted the timer to trigger every one second as that is when I want the time to change, the screen to update, and the horn to sound when its supposed to. After the same calculation for the 7-segment interrupt I found that the pre scaler should be 300 and the counter period should be 53555. After configuring this in the STM32 cube IDE once again I just had to have time decrement every time the interrupt was called. 
+It was import that the timer portion of this project was accurate to a T as it would confuse the sailors if it wasn't. I accomplished this by using another interrupt triggered by a timer. I wanted the timer to trigger every one second as that is when the screen should update, and when the horn should sound. After the same calculation for the 7-segment interrupt I found that the pre scaler should be 300 and the counter period should be 53555. After configuring this in the STM32 cube IDE once again I just had to have time decrement every time the interrupt was called. 
 ```c
 if (htim->Instance == TIM6){
 	time--;
@@ -143,5 +148,5 @@ if (htim->Instance == TIM1){
 	}
 }
 ```
-## Controlling the Horn
-...
+
+## Controlling The Horn
