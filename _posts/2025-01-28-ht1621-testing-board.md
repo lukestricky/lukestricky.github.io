@@ -32,7 +32,7 @@ This section outlines the design requirements for the breakout board, focusing o
 ## Designing PCD
 The design sheet is shown below for the PCB followed by explanations for all design choices and components, and then an image of the rounded PCB. 
 
-![Desktop View](/assets/img/ht1621TestingBoard/Schematic_HT1621.png){: width="500" height="250" }
+![Desktop View](/assets/img/ht1621TestingBoard/Schematic_HT1621.png){: width="700" height="350" }
 
 ### HT1621
 
@@ -41,6 +41,7 @@ Reading over the data sheet, the HT1621 requires pull-up resistors on its four c
 ### Level Shifter
 
 The level shifter requires connections for both 3.3V and 5V, which are the two logic levels it will be shifting. It also requires pull-up resistors; however, the pull-up resistors for the 5V line were disregarded since the HT1621 already has them in place. For the 3.3V lines an equation was used from the data sheet to limit the current into the level shifter:
+
 $$
 \begin{equation}
   Rpu = (Vpu – 0.35 V) / 0.015 A
