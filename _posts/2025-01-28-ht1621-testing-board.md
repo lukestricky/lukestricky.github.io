@@ -9,7 +9,7 @@ image:
 ---
   
 ## Motivation
-For one of the projects, I'm building currently is a compass for my sailboat that tracks and displays various metrics. Since it needs to be easily readable in sunlight, I decided to use a reflexive LCD display. I chose the LCD-S401C71TR, a 4-digit LCD that fits my needs. To drive this display, I needed a HT1621, a small SMD driver chip. Instead of just using an existing board with an lcd on it already, I wanted to design a breakout board for the HT1621. This way, I can learn by doing and understand how it works so I can implement it on the PCB for my compass project.
+One of the projects I'm building currently is a compass for my sailboat that tracks and displays various metrics. Since it needs to be easily readable in sunlight, I decided to use a reflexive LCD display. I chose the LCD-S401C71TR, a 4-digit LCD that fits my needs. To drive this display, I needed a HT1621, a small SMD driver chip. Instead of just using an existing board with an lcd on it already, I wanted to design a breakout board for the HT1621. This way, I can learn by doing and understand how it works so I can later implement it on the PCB for my compass project.
 ## Design Requirement
 This section outlines the design requirements for the breakout board, focusing on logic and LCD drive voltage separation, external voltage level inputs, and compatibility with the LCD-S401C71TR display. The design should also provide flexibility for testing other displays and implementing voltage dividers for the HT1621 controller.
 
@@ -31,6 +31,7 @@ This section outlines the design requirements for the breakout board, focusing o
 
 ## Designing PCD
 The design sheet is shown below for the PCB followed by explanations for all design choices and components, and then an image of the rounded PCB. 
+
 ![Desktop View](/assets/img/ht1621TestingBoard/Schematic_HT1621.png){: width="500" height="250" }
 
 ### HT1621
@@ -40,14 +41,16 @@ Reading over the data sheet, the HT1621 requires pull-up resistors on its four c
 ### Level Shifter
 
 The level shifter requires connections for both 3.3V and 5V, which are the two logic levels it will be shifting. It also requires pull-up resistors; however, the pull-up resistors for the 5V line were disregarded since the HT1621 already has them in place. For the 3.3V lines an equation was used from the data sheet to limit the current into the level shifter:
-$$Rpu = (Vpu – 0.35 V) / 0.015 A$$ 
-This gave ~200 $\ohm$ for the pull up resistors needed on the 3.3V side of the level shifter. 
+
+$$Rpu = (Vpu – 0.35 V) / 0.015 A$$
+
+This gave ~200 Ω for the pull up resistors needed on the 3.3V side of the level shifter. 
 
 ### External Connection and Config
 
 To facilitate external connections and configuration, two four-pin headers have been added for 3.3V and 5V data. A four-pin header is also included for power, simplifying connectivity. This includes two ground connections to ensure a common ground when voltage is being supplied from two different sources. Additionally, a two-pin header is provided for extra communication ports from the HT1621 that the LCD does not use. Finally, one three-pin header is included for selecting between the voltage divider and VDD for the HT1621
-## Routing
-## Using LPKF PCB Machine
+
+## Routing Using LPKF PCB Machine
 The PCB is routed with the intent of being make on a LPKF S104 as I have access to one at school. Some things that need to be done differently than if the intent was to order from JLC PCB are:
 1. All vias need be be minimum 0.4mm drill diameter due to tool limitations
 2. No clearance less than 0.2mm due to tool limitations
