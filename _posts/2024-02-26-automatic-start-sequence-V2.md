@@ -7,7 +7,7 @@ author: Luke
 ---
 
 ## Introduction  
-Last year, I embarked on designing a PCB based sailing start sequence automation tool, but the final outcome did not meet my expectations. The PCB I designed utilized an STM32 microcontroller in a package that had a ground plane underneath the chip, making it extremely difficult to solder without bridging adjacent pins to ground. Since I did not get the board assembled professionally, I had to solder it by hand, and this package proved to be a major challenge.  
+Last year, I embarked on designing a PCB based sailing start sequence automation tool, I learnt a lot about PCB design, bare metal programming, and the design process along the way, however, the final outcome did not meet my expectations. The PCB I designed utilized an STM32 microcontroller in a package that had a ground plane underneath the chip, making it extremely difficult to solder without bridging adjacent pins to ground. Since I did not get the board assembled professionally, I had to solder it by hand, and this package proved to be a major challenge.  
 
 Despite numerous attempts, I struggled to reliably solder the chip without causing shorts. While I managed to turn it on multiple times, crucial pins required for operation were often bridged to ground, making the board non-functional. After repeated failures, the chip eventually broke, and since I had only ordered a single unit, I had nothing working to show for my efforts. Additionally, I was unable to determine if my chosen load switch would have functioned correctly for driving the horn.  
 
